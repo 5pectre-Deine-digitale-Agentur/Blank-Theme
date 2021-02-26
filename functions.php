@@ -104,6 +104,14 @@ function Spectreblank_header_scripts()
     }
 }
 
+// Load Spectre Blank Scripts (footer.php)
+function my_footer_enqueue()
+{
+    wp_register_script( 'Spectreblankscripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true );
+    wp_enqueue_script( 'Spectreblankscripts' );
+}
+add_action( 'wp_enqueue_scripts', 'my_footer_enqueue' );
+
 // Load Spectre Blank conditional scripts
 function Spectreblank_conditional_scripts()
 {
