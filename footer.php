@@ -1,42 +1,51 @@
-<!-- FOOTER
-
-  *   TODO: Footer nach Design umsetzen
-	*		TODO:	Menüs einbinden
-	*		TODO:	Kundeninformationen vollständig hinterlegen
-	*		TODO: "designed and developed by <a href="https://5pectre.com">5pectre</a>" an letzte Stelle.
-
--->
-<footer class="footer" role="contentinfo">
-	<div class="w-wrapper grid-3x1">
-
-		<!-- copyright -->
-		<div class="info">
-			<p class="copyright">
-				&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'Spectreblank'); ?>
-				<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//Spectreblank.com" title="Spectre Blank">Spectre</a>.
-			</p>
-			<!-- /copyright -->
-
-		</div>
-
-		<div class="main-nav">
-			<?php wp_nav_menu(array( 'theme_location' => 'main' )); ?>
-		</div>
-
-		<div class="legal-nav">
-			<?php wp_nav_menu(array( 'theme_location' => 'legal' )); ?>
+<footer>
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-xxl-8 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="logo">
+						<a href="<?php echo home_url(); ?>">
+							<img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/img/logos/logo.png" alt="Logo" class="logo-img">
+						</a>
+					</div>
+					<div class="information">
+						Am Wasserwerk 2<br>
+						25355 Barmstedt
+					</div>
+				</div>
+				<div class="col-xxl-2 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+					<div class="sitemap">
+						<h4>Sitemap</h4>
+						<?php wp_nav_menu(array( 'theme_location' => 'main' )); ?>
+					</div>
+				</div>
+				<div class="col-xxl-2 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+					<div class="rechtliches">
+						<h4>Rechtliches</h4>
+						<?php wp_nav_menu(array( 'theme_location' => 'legal' )); ?>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
+	<div class="copy">
+		<div class="wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<p class="copyright">
+							&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'Spectreblank'); ?> <a href="https://5pectre.com" title="Spectre Blank">5pectre</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>
-<!-- /footer -->
 
 <?php wp_footer(); ?>
-<!-- scripts -->
-<script src="https://kit.fontawesome.com/8928e65948.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js" charset="utf-8"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
 <!-- analytics -->
 <script>
 (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){

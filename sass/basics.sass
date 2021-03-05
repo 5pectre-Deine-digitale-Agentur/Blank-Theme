@@ -1,0 +1,139 @@
+//Basics
+html, body
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  font-family: $regular
+  font-weight: 300
+  font-size: $size
+  color: $white
+  overscroll-behavior: none
+
+h1
+  font-size: $size * 1.5 * 1.5 * 1.5
+  font-family: $heading
+
+  &.light-text
+    color: $white
+
+  @include md
+    font-size: $size * 1.25 * 1.25 * 1.25
+
+h2
+  font-size: $size * 1.5 * 1.5
+  font-weight: bold
+  font-family: $heading
+
+  &.light-text
+    color: $white
+
+  @include md
+    font-size: $size * 1.25 * 1.25
+
+h3
+  font-size: $size * 1.5
+  font-weight: bold
+
+  &.light-text
+    color: $white
+
+  @include md
+    font-size: $size * 1.25
+
+h4
+  font-size: $size * 1.25
+  font-family: $heading
+
+  &.light-text
+    color: $white
+
+  @include md
+    font-size: $size
+
+h5
+  font-size: $size / 1.25
+  font-weight: bold
+  font-family: $heading
+
+  &.light-text
+    color: $white
+
+h6
+  font-size: $size / 1.5 / 1.5
+
+  &.light-text
+    color: $white
+
+span, a, p
+  font-size: $size
+  text-decoration: none
+  color: inherit
+  list-style: none
+  color: $white
+  font-family: $regular
+  color: $white
+
+  &:hover
+    color: inherit
+
+  &.light-text
+    color: $white
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+  display: flex
+  flex-direction: row
+
+  li
+      list-style: none
+      margin: 0
+      padding: 0
+      display: flex
+      flex-direction: column
+      justify-content: center
+
+.wrapper
+  width: 1200px
+  height: 100%
+  margin: auto
+  position: relative
+  z-index: 10
+
+  @include xl
+    width: calc(100% - 200px)
+
+  @include lg
+    width: calc(100% - 200px)
+
+  @include md
+    width: calc(100% - 50px)
+
+  @include md
+    width: calc(100% - 20px)
+
+  @include md
+    width: calc(100% - 10px)
+
+section.section
+  position: relative
+  height: 100vh
+  width: 100%
+
+.ninja
+  @include md
+    visibility: hidden
+
+.lego
+  display: block
+
+.titanic
+  float: none
+
+.centered
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)

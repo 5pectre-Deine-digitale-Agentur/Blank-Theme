@@ -8,7 +8,7 @@
    *    TODO: Navigation zuweisen.
    *    TODO: Custom-Post-Types erstellen
    *    TODO: Seitenspezifische .js-Dateien den entsprechenden Seiten zuweisen
-   
+
 */
 
 /*------------------------------------*\
@@ -104,13 +104,28 @@ function Spectreblank_header_scripts()
     }
 }
 
-// Load Spectre Blank Scripts (footer.php)
-function my_footer_enqueue()
+// Load Footer Scripts (footer.php)
+function my_footer_enqueue_footer()
 {
-    wp_register_script( 'Spectreblankscripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true );
-    wp_enqueue_script( 'Spectreblankscripts' );
+    wp_register_script( 'Spectreblankfooterscripts', get_template_directory_uri() . '/js/footerScripts.js', array(), '1.0', true );
+    wp_enqueue_script( 'Spectreblankfooterscripts' );
+
+    wp_register_script( 'Spectreblankanimationscripts', get_template_directory_uri() . '/js/animation.js', array(), '1.0', true );
+    wp_enqueue_script( 'Spectreblankanimationscripts' );
+
+    wp_register_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', array(), '1.0', true );
+    wp_enqueue_script( 'bootstrap' );
+
+    wp_register_script( 'fontawesome', 'https://kit.fontawesome.com/8928e65948.js', array(), '1.0', true );
+    wp_enqueue_script( 'fontawesome' );
+
+    wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js', array(), '1.0', true );
+    wp_enqueue_script( 'jquery' );
+
+    wp_register_script( 'animejs', 'https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js', array(), '1.0', true );
+    wp_enqueue_script( 'animejs' );
 }
-add_action( 'wp_enqueue_scripts', 'my_footer_enqueue' );
+add_action( 'wp_enqueue_scripts', 'my_footer_enqueue_footer' );
 
 // Load Spectre Blank conditional scripts
 function Spectreblank_conditional_scripts()
@@ -124,16 +139,12 @@ function Spectreblank_conditional_scripts()
 // Load Spectre Blank styles
 function Spectreblank_styles()
 {
-    wp_register_style('Spectreblank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('Spectreblank'); // Enqueue it!
-}
+    wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrap');
 
-// Load Spectre conditional Styles
-function team_styles2() {
-	if ( is_page_template('template-name.php') )
-   	wp_enqueue_style( 'Template Name here', get_stylesheet_directory_uri() . '/css/template-name.css' );
+    wp_register_style('Spectreblank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('Spectreblank');
 }
-add_action( 'wp_enqueue_scripts', 'team_styles2', 101 );
 
 // Register Spectre Blank Navigation
 function register_Spectre_menu()
