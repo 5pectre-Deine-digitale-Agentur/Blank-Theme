@@ -1,5 +1,9 @@
 # Blank-Theme
 
+Eine Front-End Version des Blank-Theme findest du auf:
+
+**https://blank.5pectre.com**
+
 Zur Verbesserung unseres Workflow haben wir hier ein neues Blank-Theme. Dieses soll uns die zusammenarbeit über Git stark vereinfachen. Zu beginn sollte jeder Projektteilnehmer die nötigen dependencies installiert haben, um erfolgreich in einem Projekt aufbauend auf dem Blank-Theme teilnehmen zu können. Benötigt werden:
 
 - Git
@@ -39,13 +43,13 @@ Das Favicon und die Screenshot.png werden von uns zur verfügung gestellt und si
 Die Navigation ist von Wordpress zu übernehmen. Es werden im Grunde 3 Navigationsmenüs verwendet (Extra-Nav, Main-Nav, und Legal-Nav). Weitere Navigationen sind nicht händisch zu programmieren, sondern werden immer über die functions.php erstellt. Ausnahme hierfür sind menüs, die als Onpage-Filter dienen. Diese können mit folgenden Snippets auf der Seite abgerufen werden:
 
 Main-Nav
-> **<?php wp_nav_menu(array( 'theme_location' => 'main' )); ?>**
+  **<?php wp_nav_menu(array( 'theme_location' => 'main' )); ?>**
 
 Legal-Nav (AGB, Datenschutz, Impressum und solche Sachen)
-> **<?php wp_nav_menu(array( 'theme_location' => 'legal' )); ?>**
+  **<?php wp_nav_menu(array( 'theme_location' => 'legal' )); ?>**
 
 Extra-Nav
-> **<?php wp_nav_menu(array( 'theme_location' => 'extra' )); ?>**
+  **<?php wp_nav_menu(array( 'theme_location' => 'extra' )); ?>**
 
 Weitere Menüs werden unter Rücksprache in der functions.php erstellt.
 
@@ -65,42 +69,42 @@ Der Webseitenbetreiber soll am Ende in der Lage sein, ohne Programmieraufwand In
 Hierzu unter dem Dashboard auf Eigene Felder Navigieren und dort für jeden Bereich mit eigenem Template im “sections”-Ordner eine Feldgruppe erstellen und diese nach der Bereichs-ID benennen. Grundsätzlich sollte jeder Bereich eine eigene Feldgruppe besitzen. Anschließend fügen wir unten Konditionen für die Ausgabe der Felder hinzu.
 
 Für die Startseite geben wir folgende Regeln an:
-> **Für ‘Seitentyp’ ‘ist gleich’ ‘Startseite’**
+  **Für ‘Seitentyp’ ‘ist gleich’ ‘Startseite’**
 
 Für Seiten mit spezifischen Templates:
-> **Für ‘Seitentemplate’ ‘ist gleich’ ‘Template-name’**
+  **Für ‘Seitentemplate’ ‘ist gleich’ ‘Template-name’**
 
 Die “und” und “oder” Operatoren ermöglichen uns die wiederbenutzung von Bereich und Feldgruppen. Wenn ein Bereich auf verschiedenen Seiten vorkommt, muss dies auch in den ACF berücksichtigt werden.
 
 Nun Können wir individuelle Felder mit den entsprechenden Regeln festlegen. Werden im entsprechenden Template mit folgendem PHP-Snippet eingefügt :
 
-> **<?php the_field(‘ “Feldname” ’); ?>**
+  **<?php the_field(‘ “Feldname” ’); ?>**
 
 ###2.4 Sections
 Wie schon gesagt, wird jeder Bereich in einer individuellesn Datei programmiert. Dies bietet uns bessere Möglichkeiten der Zusammenarbeit und kurze Reaktionszeiten für die Behebung von Bugs.
 
 Jede Section wird mit “Bereichs-ID”.php betietelt und ist Inhalt einer ACF-Gruppe. Somit hat jeder Bereich eine ähnliche Struktur, die Wie folgt aussieht:
 
-> **<?php if( have_rows('section-ID') ): ?>**
->   **<?php while( have_rows('section-ID') ): the_row(); ?>**
->
-> 	// Dein Code
->
->   **<?php endwhile; ?>**
-> **<?php endif; ?>**
+  **<?php if( have_rows('section-ID') ): ?>**
+    **<?php while( have_rows('section-ID') ): the_row(); ?>**
+
+	   // Dein Code
+
+    **<?php endwhile; ?>**
+  **<?php endif; ?>**
 
 Innerhalb der Gruppe ändert sich der Hook von “field” zu “sub_field”. Folglich müssen ACFs über
 
-> **<?php the_sub_field(‘ “Feldname” ’); ?>**
+  **<?php the_sub_field(‘ “Feldname” ’); ?>**
 
 abgerufen werden. Um die Bereich abzurufen, müssen die Zieldateien des Hooks im Code in der darzustellenden Reihenfolge angegeben werden. Die Geschieht über den folgenden Zielcode:
 
-> **<?php**
-> **include ‘sections/section-ID.php’;**
-.
-.
-.
-> **?>**
+  **<?php**
+  **include ‘sections/section-ID.php’;**
+  .
+  .
+  .
+  **?>**
 
 Dieser Hook kann beliebig häufig wiederholt werden.
 
@@ -108,7 +112,7 @@ Dieser Hook kann beliebig häufig wiederholt werden.
 ###2.5 Page Templates
 Alle Seiten, die ein besonderes Layout erfordern, erhalten ein eigenes Page-Template. Hierzu im Theme Verzeichnis eine neue Datei “Template-Name”.php anlegen. Zusätlich im CSS-Ordner eine datei “Template-Name”.css erstellen. Zusätzlich muss das Template benannt werden. Der Name ist im Header-Tag hinterlegt nach folgendem Muster:
 
-> > **<?php /* Template-Name: “Template-Name” */ get_header(); ?>**
+  **<?php /* Template-Name: “Template-Name” */ get_header(); ?>**
 
 Abschließend muss das Template mit der entsprechende Seite zugewiesen Werden. Hierfür im Dashboard zu Seiten > “deine Seite” navigieren und in der rechten Sidebar unter “Seitenattribute” das eben erstellte Template wählen.
 
@@ -125,32 +129,32 @@ Der footer.php wird nach Designvorgaben erstellt. Zwingend einzubinden sind das 
 ###2.9 Standardtemplates
 Neben besonderer Templates muss noch ein Standard Template für neue Seiten erstellt werden. Dieses WIrd nach Designvorgaben umgesetzt und muss jeweils das Title-Snippet:
 
-> **<?php the_title(); ?>**
+  **<?php the_title(); ?>**
 
 und eine Schleife zur Darstellung der im Backend hinterlegten Inhalte vorhanden sein. Diese Schleife hat die Form:
 
+  **<?php if (have_posts()): while (have_posts()) : the_post(); ?>**
 
-> **<?php if (have_posts()): while (have_posts()) : the_post(); ?>**
->
-> <!-- Start of Content -->
-> 	**<span id="post-<?php the_ID(); ?>" <?php post_class(); ?>>**
->
-> 		**<?php the_content(); ?>**
->
-> 		**<?php comments_template( '', true ); // Remove if you don't want comments ?>**
->
-> 		**<?php edit_post_link(); ?>**
-> 	**</span>**
-> <!-- /End of Content -->
-> **<?php endwhile; ?>**
->
-> **<?php else: ?>**
-> <!-- Start of Nothing to Display →
-> <span>
-> 		<h2><?php _e( 'Sorry, nothing to display.', 'Spectreblank' ); ?></h2>
-> 	</span>
-> <!-- End of Nothing to Display -->
-> **<?php endif; ?>**
+    <!-- Start of Content -->
+    **<span id="post-<?php the_ID(); ?>" <?php post_class(); ?>>**
+      <!-- Wordpress Content-Hook -->
+      **<?php the_content(); ?>**
+      <!-- Comment Meta -->
+      **<?php comments_template( '', true ); // Remove if you don't want comments ?>**
+      <!-- Edit this Post Link -->
+      **<?php edit_post_link(); ?>**
+
+    **</span>**
+    <!-- /End of Content -->
+  **<?php endwhile; ?>**
+
+  **<?php else: ?>**
+    <!-- Start of Nothing to Display -->
+    **<span>**
+      **<h2><?php _e( 'Sorry, nothing to display.', 'Spectreblank' ); ?></h2>**
+    **</span>**
+    <!-- End of Nothing to Display -->
+  **<?php endif; ?>**
 
 und ist unter “sections/content.php” zu finden. Die Schleife kann beliebig abgewandelt werden, sodass das Anzeigeformat den Designvorgaben gleicht.
 
@@ -175,13 +179,13 @@ Grundsätzlich werden Inhaltsblöcke oder Elemente, die für den Nutzer später 
 Jeder Bereich besteht aus einer <section> und einem <div class=”wrapper”>.
 Grundsätzlich sollte jede Section eine ID erhalten und die Wrapper in der .css Datei für die gesamte Seite vordefiniert werden. Es ergibt sich somit eine Struktur wie folgt…
 
-> **<section id=”beispiel-bereich”>**
-> 	**<div class=”wrapper”>**
->   .
->   .
->   .
->   **</div>**
-> **</section>**
+  **<section id=”beispiel-bereich”>**
+    **<div class=”wrapper”>**
+    .
+    .
+    .
+    **</div>**
+  **</section>**
 
 Sollte dir auffallen, dass weitere CSS-Elemte nützlich sein können, teile uns dies bitte kurz mit. Wir möchten dir und deinen Kollegen, die Erfahrung so angenehm wie möglich gestalten und arbeiten ständig daran, dieses Erlebnis zu verbessern.
 
