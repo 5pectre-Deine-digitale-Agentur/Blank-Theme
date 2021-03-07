@@ -17,6 +17,7 @@
     <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicons/favicon.ico" rel="shortcut icon">
     <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
 
+		<!-- Enque Header -->
 		<?php wp_head(); ?>
 
 	</head>
