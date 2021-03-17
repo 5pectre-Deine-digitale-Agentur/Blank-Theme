@@ -159,40 +159,26 @@ section.section {
 #navigation {
   width: 100%;
   min-height: 100%;
-  padding: 20px 0;
   background: #000000; }
-  #navigation .container .row {
-    width: 300px; }
-    #navigation .container .row .menu-item-col {
+  #navigation .container .row .menu-item-col {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: auto;
+    width: 100%; }
+    #navigation .container .row .menu-item-col .menu {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh; }
-      #navigation .container .row .menu-item-col .menu {
-        margin: auto;
-        display: flex;
-        flex-direction: column; }
-      #navigation .container .row .menu-item-col ul {
-        margin-left: 20px;
-        margin-left: 300px; }
-        #navigation .container .row .menu-item-col ul li {
-          min-height: 80px; }
-          #navigation .container .row .menu-item-col ul li a {
-            font-size: 40px; }
-    #navigation .container .row .number {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      flex-direction: column; }
+    #navigation .container .row .menu-item-col ul {
+      height: 100vh;
       margin: auto; }
-      #navigation .container .row .number ul {
-        list-style: none;
-        display: block; }
-        #navigation .container .row .number ul li {
-          min-height: 80px;
-          font-size: 10px; }
+      #navigation .container .row .menu-item-col ul li {
+        height: 100%;
+        margin: auto;
+        margin-left: 25px; }
+        #navigation .container .row .menu-item-col ul li a {
+          font-size: 50px;
+          font-weight: lighter; }
 
 footer {
   padding-top: 100px;
@@ -224,5 +210,28 @@ footer {
 
 .section_title {
   color: #B1A38E; }
+
+#head {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  margin: auto; }
+  #head .text {
+    text-align: left;
+    padding: 20px; }
+    #head .text h1 {
+      color: #FFFFFF;
+      font-size: 25px; }
+    #head .text h2 {
+      color: #9A108F;
+      font-size: 60px; }
+  #head .container {
+    padding: 20px; }
+    #head .container .row .button {
+      border-radius: 50px;
+      border: 1px solid #FFFFFF;
+      width: 100px;
+      height: 100px;
+      margin: auto; }
 
 /*# sourceMappingURL=style.css.map */
