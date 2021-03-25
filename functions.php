@@ -125,7 +125,12 @@ function my_footer_enqueue_footer()
     wp_register_script( 'animejs', 'https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js', array(), '1.0', true );
     wp_enqueue_script( 'animejs' );
 }
-add_action( 'wp_enqueue_scripts', 'my_footer_enqueue_footer' );
+
+// Load Admin Scripts
+function custom_admin_js() {
+    $url = get_bloginfo('template_directory') . '/js/wp-admin.js';
+    echo '"<script type="text/javascript" src="'. $url . '"></script>"';
+}
 
 // Load Spectre Blank conditional scripts
 function Spectreblank_conditional_scripts()
@@ -144,6 +149,11 @@ function Spectreblank_styles()
 
     wp_register_style('Spectreblank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('Spectreblank');
+}
+
+// Load Spectre Blank Admin Stylesheet
+function my_admin_style() {
+  wp_enqueue_style( 'admin-style', get_stylesheet_directory_uri() . '/admin-style.css' );
 }
 
 // Register Spectre Blank Navigation
@@ -365,9 +375,12 @@ function Spectreblankcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'Spectreblank_header_scripts'); // Add Custom Scripts to wp_head
+add_action( 'wp_enqueue_scripts', 'my_footer_enqueue_footer' ); // Add Custom Scripts to wp_footer
 add_action('wp_print_scripts', 'Spectreblank_conditional_scripts'); // Add Conditional Page Scripts
+add_action('admin_footer', 'custom_admin_js'); // Add Custom Scripts to Admin-Dashboard
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'Spectreblank_styles'); // Add Theme Stylesheet
+add_action( 'admin_enqueue_scripts', 'my_admin_style'); // Add Admin Stylesheet
 add_action('init', 'register_Spectre_menu'); // Add Spectre Blank Menu
 add_action('init', 'create_post_type_Spectre'); // Add our Spectre Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()

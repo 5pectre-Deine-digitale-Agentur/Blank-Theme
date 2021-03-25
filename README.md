@@ -43,13 +43,13 @@ Das Favicon und die Screenshot.png werden von uns zur verfügung gestellt und si
 Die Navigation ist von Wordpress zu übernehmen. Es werden im Grunde 3 Navigationsmenüs verwendet (Extra-Nav, Main-Nav, und Legal-Nav). Weitere Navigationen sind nicht händisch zu programmieren, sondern werden immer über die functions.php erstellt. Ausnahme hierfür sind menüs, die als Onpage-Filter dienen. Diese können mit folgenden Snippets auf der Seite abgerufen werden:
 
 Main-Nav
-  **<?php wp_nav_menu(array( 'theme_location' => 'main' )); ?>**
+**<?php wp_nav_menu(array( 'theme_location' => 'main' )); ?>**
 
 Legal-Nav (AGB, Datenschutz, Impressum und solche Sachen)
-  **<?php wp_nav_menu(array( 'theme_location' => 'legal' )); ?>**
+**<?php wp_nav_menu(array( 'theme_location' => 'legal' )); ?>**
 
 Extra-Nav
-  **<?php wp_nav_menu(array( 'theme_location' => 'extra' )); ?>**
+**<?php wp_nav_menu(array( 'theme_location' => 'extra' )); ?>**
 
 Weitere Menüs werden unter Rücksprache in der functions.php erstellt.
 
