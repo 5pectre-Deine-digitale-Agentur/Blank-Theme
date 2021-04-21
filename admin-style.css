@@ -1,4 +1,4 @@
-.acf-label {
+.acf-fields.-left>.acf-field>.acf-label {
   position: sticky;
-  top: 50px
+  top: 100px
 }
