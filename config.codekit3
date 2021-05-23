@@ -92,18 +92,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/css\/style.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/css\/style-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/css\/variables.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -698,6 +686,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/sass\/Hero\/hero-8.sass" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 2,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/Hero\/hero-8.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/sass\/navigation.sass" : {
       "aP" : 0,
       "bl" : 0,
@@ -734,8 +736,8 @@
       "ft" : 2,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/sass\/style.css",
-      "oF" : 0,
+      "oAP" : "\/style.css",
+      "oF" : 2,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
@@ -807,6 +809,14 @@
       "oAP" : "\/sections\/Hero\/hero-3.php",
       "oF" : 0
     },
+    "\/sections\/Hero\/hero-8.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/Hero\/hero-8.php",
+      "oF" : 0
+    },
     "\/sections\/navigation.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -830,18 +840,6 @@
       "oA" : 0,
       "oAP" : "\/single.php",
       "oF" : 0
-    },
-    "\/style-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/style-min-min.css",
-      "oF" : 0,
-      "pg" : 0
     },
     "\/style.css" : {
       "aP" : 1,
