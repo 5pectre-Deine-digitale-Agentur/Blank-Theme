@@ -1,0 +1,61 @@
+#hero.hero-9
+  height: calc(100vh - 20px)
+  width: calc(100% - 20px)
+  margin: 10px
+
+  @include md
+    height: fit-content
+
+  .container-fluid
+    height: 100%
+
+    .row
+      height: 100%
+
+      .upper
+        min-height: 70%
+        background: $color2
+        position: relative
+
+        @include md
+          height: 70vh
+
+        &::after
+          content: ""
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: 0
+          background: $black
+          opacity: .5
+          z-index: 0
+
+        .content-container
+          height: 100%
+          width: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+
+          .content
+            z-index: 1
+
+            @include md
+              padding: 100px 25px
+
+      .lower
+        height: 30%
+
+        @include md
+          min-height: 30vh
+
+        .content-container
+          width: 100%
+          height: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+
+          .content
+            padding: 35px 25px

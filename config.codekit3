@@ -855,6 +855,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/sass\/Hero\/hero-9.sass" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 2,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/Hero\/hero-9.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/sass\/navigation.sass" : {
       "aP" : 0,
       "bl" : 0,
@@ -970,6 +984,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/sections\/Hero\/hero-8.php",
+      "oF" : 0
+    },
+    "\/sections\/Hero\/hero-9.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/Hero\/hero-9.php",
       "oF" : 0
     },
     "\/sections\/navigation.php" : {

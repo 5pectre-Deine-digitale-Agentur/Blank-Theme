@@ -18,7 +18,7 @@ html, body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #2D2A2B;
   overscroll-behavior: none;
 }
 html main, body main {
@@ -102,9 +102,7 @@ span, a, p {
   text-decoration: none;
   color: inherit;
   list-style: none;
-  color: #FFFFFF;
   font-family: "Roboto", sans-serif;
-  color: #FFFFFF;
 }
 span:hover, a:hover, p:hover {
   color: inherit;
@@ -195,6 +193,7 @@ section.section {
   font-weight: 500;
   border-radius: 10px;
   transition: 0.3s;
+  color: #FFFFFF;
 }
 .button a:hover {
   background: #00D8FF;
@@ -207,6 +206,7 @@ section.section {
   font-weight: 500;
   border-radius: 10px;
   transition: 0.3s;
+  color: #FFFFFF;
 }
 .secondary-button a:hover {
   background: #00D8FF;
@@ -460,7 +460,7 @@ footer ul.menu .menu-item a {
 
 #hero.hero-8 {
   height: calc(100vh - 20px);
-  width: calc(100vw - 20px);
+  width: calc(100% - 20px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -504,4 +504,75 @@ footer ul.menu .menu-item a {
     width: 100%;
     height: 100px;
   }
+}
+
+#hero.hero-9 {
+  height: calc(100vh - 20px);
+  width: calc(100% - 20px);
+  margin: 10px;
+}
+@media (max-width: 768px) {
+  #hero.hero-9 {
+    height: fit-content;
+  }
+}
+#hero.hero-9 .container-fluid {
+  height: 100%;
+}
+#hero.hero-9 .container-fluid .row {
+  height: 100%;
+}
+#hero.hero-9 .container-fluid .row .upper {
+  min-height: 70%;
+  background: #00D8FF;
+  position: relative;
+}
+@media (max-width: 768px) {
+  #hero.hero-9 .container-fluid .row .upper {
+    height: 70vh;
+  }
+}
+#hero.hero-9 .container-fluid .row .upper::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 0;
+}
+#hero.hero-9 .container-fluid .row .upper .content-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#hero.hero-9 .container-fluid .row .upper .content-container .content {
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  #hero.hero-9 .container-fluid .row .upper .content-container .content {
+    padding: 100px 25px;
+  }
+}
+#hero.hero-9 .container-fluid .row .lower {
+  height: 30%;
+}
+@media (max-width: 768px) {
+  #hero.hero-9 .container-fluid .row .lower {
+    min-height: 30vh;
+  }
+}
+#hero.hero-9 .container-fluid .row .lower .content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#hero.hero-9 .container-fluid .row .lower .content-container .content {
+  padding: 35px 25px;
 }
