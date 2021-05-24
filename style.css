@@ -201,6 +201,19 @@ section.section {
   transition: 0.3s;
 }
 
+.secondary-button a {
+  padding: 14px 28px;
+  border: 1px solid #9A108F;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.secondary-button a:hover {
+  background: #00D8FF;
+  transition: 0.3s;
+  border: 1px solid #00D8FF;
+}
+
 #content {
   background: #000000;
   padding: 200px 0;
@@ -279,6 +292,35 @@ footer ul.menu .menu-item a {
 
 .section_title {
   color: #B1A38E;
+}
+
+#head {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  margin: auto;
+}
+#head .text {
+  text-align: left;
+  padding: 20px;
+}
+#head .text h1 {
+  color: #FFFFFF;
+  font-size: 25px;
+}
+#head .text h2 {
+  color: #9A108F;
+  font-size: 60px;
+}
+#head .container {
+  padding: 20px;
+}
+#head .container .row .button {
+  border-radius: 50px;
+  border: 1px solid #FFFFFF;
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
 
 #hero.hero-2 {

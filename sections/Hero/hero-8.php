@@ -10,7 +10,7 @@
               <div class="button">
                 <a href="#">Button</a>
               </div>
-              <div class="button">
+              <div class="secondary-button">
                 <a href="#">Button</a>
               </div>
             </div>

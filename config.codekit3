@@ -17,6 +17,18 @@
       "oAP" : "\/404.php",
       "oF" : 0
     },
+    "\/admin-style.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/admin-style-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/archive.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -68,6 +80,18 @@
       "oAP" : "\/comments.php",
       "oF" : 0
     },
+    "\/css\/basics.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/basics-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/css\/breakpoints.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -77,6 +101,50 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/css\/breakpoints-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/css\/breakpoints.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/breakpoints.css.map",
+      "oF" : 0
+    },
+    "\/css\/button.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/button-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/css\/content.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/content-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/css\/footer.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/footer-min.css",
       "oF" : 0,
       "pg" : 0
     },
@@ -92,6 +160,34 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/css\/navigation.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/navigation.css.map",
+      "oF" : 0
+    },
+    "\/css\/section.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/section-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/css\/style.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/style.css.map",
+      "oF" : 0
+    },
     "\/css\/variables.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -103,6 +199,14 @@
       "oAP" : "\/css\/variables-min.css",
       "oF" : 0,
       "pg" : 0
+    },
+    "\/css\/variables.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/variables.css.map",
+      "oF" : 0
     },
     "\/fonts\/readme.txt" : {
       "cB" : 0,
@@ -303,6 +407,32 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/img\/ressources\/5pectreLoginCoverDark.png" : {
+      "ft" : 32768,
+      "iS" : 720677,
+      "oA" : 0,
+      "oAP" : "\/img\/ressources\/5pectreLoginCoverDark.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/img\/ressources\/5pectreLoginCoverLight.png" : {
+      "ft" : 32768,
+      "iS" : 715264,
+      "oA" : 0,
+      "oAP" : "\/img\/ressources\/5pectreLoginCoverLight.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/index.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -362,6 +492,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/js\/scripts-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/js\/wp-admin.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/js\/wp-admin-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -653,6 +794,20 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/footer.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/head.sass" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 2,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/head.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
