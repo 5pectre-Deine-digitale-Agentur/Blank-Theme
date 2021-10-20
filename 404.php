@@ -1,31 +1,31 @@
 <?php
-/*    404-WEITERLEITUNG
-
-  *   TODO: 404 Umleitung einrichten
-	*		TODO: Button um zurück zur Startseite zu kommen nicht vergessen
-
-*/
+/**
+ * The template for displaying 404 pages (Not Found)
+**/
 get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+	<main role="main" class="main" id="main">
+		<section id="page-404">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="text-wrapper">
+							<div class="title">
+								 <h1 class="h1 special">404</h1>
+							</div>
 
-			<!-- article -->
-			<article id="post-404">
+							<div class="subtitle" data-content="Oops, the page you're looking for doesn't exist">
+									Oops, the page you're looking for doesn't exist.
+							</div>
 
-				<h1><?php _e( 'Page not found', 'Spectreblank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'Spectreblank' ); ?></a>
-				</h2>
-
-			</article>
-			<!-- /article -->
-
+							<div class="button">
+									<a class="button" href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'Spectreblank' ); ?></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+	</div>
 
 <?php get_footer(); ?>

@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <?php
-include 'sections/content.php';
+  include 'loop.php';
 ?>
 
 <?php get_footer(); ?>

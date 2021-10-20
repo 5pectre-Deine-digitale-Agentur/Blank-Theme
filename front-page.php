@@ -13,8 +13,10 @@
 */
 get_header(); ?>
 
-<?php
-include 'sections/section.php';
-?>
+<main role="main">
+  <?php include 'sections/03_parts/hero.php'; ?>
+  <?php include 'sections/02_content/code.php'; ?>
+  <?php include 'sections/01_ui/posts.php'; ?>
+</main>
 
 <?php get_footer(); ?>

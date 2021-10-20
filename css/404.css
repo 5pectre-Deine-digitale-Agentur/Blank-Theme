@@ -1,0 +1,25 @@
+#page-404 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#page-404 .container .row {
+  height: 100%;
+}
+#page-404 .container .row .col-12 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#page-404 .container .row .col-12 .text-wrapper {
+  text-align: center;
+}
+#page-404 .container .row .col-12 .text-wrapper .subtitle {
+  margin-bottom: 2em;
+}
+#page-404 .container .row .col-12 .text-wrapper .button {
+  margin: auto;
+}

@@ -1,0 +1,23 @@
+#accordeon
+  .accordion
+    cursor: pointer
+    padding: 18px
+    width: 100%
+    text-align: left
+    border: none
+    outline: none
+    transition: 0.4s
+
+    h3
+      font-family: $heading
+
+  .active, .accordion:hover
+    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001
+
+  .panel
+    padding: 0 18px
+    background-color: white
+    max-height: 0
+    overflow: hidden
+    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001
+    transition: max-height 0.2s ease-out

@@ -1,0 +1,24 @@
+#gallery
+  display: flex
+  position: relative
+  width: 100%
+  justify-content: center
+  flex-flow: row wrap
+  gap: 5px
+
+  .image__container
+    width: calc(25% - 5px)
+    height: 0
+    padding-bottom: calc(25% - 5px)
+    position: relative
+    overflow: hidden
+
+    img
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      width: auto
+      height: 100%
+      transition: .5s
+      z-index: 1
