@@ -1,0 +1,36 @@
+form
+  position: relative
+  input
+    &[type=search]
+      width: 100%
+      max-width: 300px
+      border-radius: 50px
+      border: none !important
+      box-shadow: $shadow
+      padding: 12px 24px
+      text-align: right
+
+  button
+    &[type=submit]
+      background: $black !important
+      border: none !important
+      position: absolute
+      left: 0
+      bottom: 0
+      height: 48px
+      width: 48px
+      padding: 0
+      margin: 0
+      border-radius: 50px
+      margin: 0 !important
+
+      &::after
+        font-family: "Font Awesome 5 Free"
+        font-weight: 900
+        content: "\f002"
+        position: absolute
+        color: white
+        font-size: 16px
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)

@@ -1,0 +1,12 @@
+@import "../variables.scss";
+@import "hooks.scss";
+
+.a2020_overview_icon {
+  background: var(--a2020-primary-wash);
+  padding: 15px;
+  color: $global-primary-background;
+  border-radius: 8px;
+}
+.a2020_card_drag {
+  cursor: grab;
+}
