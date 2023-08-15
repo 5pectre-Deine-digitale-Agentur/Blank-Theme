@@ -15,7 +15,6 @@ jobs:
 
     - name: Set up SSH key
       run: |
-        mkdir -p /kunden/homepages/13/d829753805/htdocs/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
         chmod 600 /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
         ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> /kunden/homepages/13/d829753805/htdocs/.ssh/known_hosts
