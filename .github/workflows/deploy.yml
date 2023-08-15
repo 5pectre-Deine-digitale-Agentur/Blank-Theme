@@ -12,19 +12,25 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-      
+
     - name: Set up SSH key
       run: |
-        echo "SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}"
-        echo "SSH_ADDRESS: ${{ secrets.SERVER_ADDRESS }}"
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/workflow
+        chmod 600 ~/.ssh/workflow
         ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> ~/.ssh/known_hosts
+
+    - name: Add SSH key to agent
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
         
     - name: Deploy Theme
       run: |
-        rsync -azP --delete-after --exclude='.git*' --exclude='.github*' ."2 - www/WP_blank.5pectre.design_2021/wp-content/themes" ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:/
-        
+        rsync -azP --delete-after --exclude='.git*' --exclude='.github*' ./path/to/your/theme ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:"/2 - www/dev/WP_blank.5pectre.com/wp-content/themes"
+
+    - name: Clear SSH key from agent
+      run: ssh-add -D
+
     - name: Clear SSH key
       run: rm -f ~/.ssh/workflow
