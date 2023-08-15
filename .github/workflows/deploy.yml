@@ -16,21 +16,13 @@ jobs:
     - name: Set up SSH key
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/workflow
+        echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > ~/.ssh/workflow
         chmod 600 ~/.ssh/workflow
         ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> ~/.ssh/known_hosts
 
-    - name: Add SSH key to agent
-      run: |
-        eval "$(ssh-agent -s)"
-        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
-        
     - name: Deploy Theme
       run: |
-        rsync -azP --delete-after --exclude='.git*' --exclude='.github*' ./path/to/your/theme ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:"/2 - www/dev/WP_blank.5pectre.com/wp-content/themes"
-
-    - name: Clear SSH key from agent
-      run: ssh-add -D
+        rsync -azP --delete-after --exclude='.git*' --exclude='.github*' . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:"/2 - www/dev/WP_blank.5pectre.com/wp-content/themes"
 
     - name: Clear SSH key
       run: rm -f ~/.ssh/workflow
