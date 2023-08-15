@@ -17,7 +17,7 @@ jobs:
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > ~/.ssh/workflow
         chmod 600 ~/.ssh/workflow
-        ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> /kunden/homepages/13/d829753805/htdocs/.ssh/known_hosts
+        ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> ~/.ssh/known_hosts
 
     - name: Deploy Theme
       run: |
