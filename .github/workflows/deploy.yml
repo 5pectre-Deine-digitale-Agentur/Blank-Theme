@@ -20,10 +20,9 @@ jobs:
         chmod 600 /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
         ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> /kunden/homepages/13/d829753805/htdocs/.ssh/known_hosts
 
-
     - name: Deploy Theme
       run: |
         rsync -azP --delete-after --exclude='.git*' --exclude='.github*' . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:"/2 - www/dev/WP_blank.5pectre.com/wp-content/themes"
 
     - name: Clear SSH key
-      run: rm -f ~/.ssh/workflow
+      run: rm -f /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
