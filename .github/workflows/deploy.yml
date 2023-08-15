@@ -15,9 +15,11 @@ jobs:
 
     - name: Set up SSH key
       run: |
-        echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > ~/.ssh/workflow
-        chmod 600 ~/.ssh/workflow
-        ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> ~/.ssh/known_hosts
+        mkdir -p /kunden/homepages/13/d829753805/htdocs/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
+        chmod 600 /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
+        ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> /kunden/homepages/13/d829753805/htdocs/.ssh/known_hosts
+
 
     - name: Deploy Theme
       run: |
