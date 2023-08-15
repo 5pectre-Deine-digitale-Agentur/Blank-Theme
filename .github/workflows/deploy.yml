@@ -15,8 +15,8 @@ jobs:
 
     - name: Set up SSH key
       run: |
-        echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
-        chmod 600 /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
+        echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > ~/.ssh/workflow
+        chmod 600 ~/.ssh/workflow
         ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> /kunden/homepages/13/d829753805/htdocs/.ssh/known_hosts
 
     - name: Deploy Theme
@@ -24,4 +24,4 @@ jobs:
         rsync -azP --delete-after --exclude='.git*' --exclude='.github*' . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:"/2 - www/dev/WP_blank.5pectre.com/wp-content/themes"
 
     - name: Clear SSH key
-      run: rm -f /kunden/homepages/13/d829753805/htdocs/.ssh/workflow
+      run: rm -f ~/.ssh/workflow
