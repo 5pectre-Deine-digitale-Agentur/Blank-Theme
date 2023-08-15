@@ -1,0 +1,22 @@
+name: Deploy WordPress Theme
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH keys
+        uses: webfactory/ssh-agent@v0.5.2
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Upload to server
+        run: scp -r "2 - www/WP_blank.5pectre.design_2021/wp-content/themes" ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:/path/to/remote/directory
