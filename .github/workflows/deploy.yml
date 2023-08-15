@@ -16,8 +16,8 @@ jobs:
     - name: Set up SSH key
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/workflow
-        chmod 600 ~/.ssh/workflow
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -t rsa ${{ secrets.SSH_ADDRESS }} >> ~/.ssh/known_hosts
         
     - name: Deploy Theme
