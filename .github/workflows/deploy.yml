@@ -13,11 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up SSH keys
+     - name: Set up SSH keys
         uses: webfactory/ssh-agent@v0.5.2
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-add-args: "-v" 
+        env:
+          SSH_ADD_ARGS: "-v"
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Upload to server
         run: scp -r "2 - www/WP_blank.5pectre.design_2021/wp-content/themes" ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_ADDRESS }}:/path/to/remote/directory
