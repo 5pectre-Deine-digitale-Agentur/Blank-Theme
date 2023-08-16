@@ -12,9 +12,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-
-    - name: Find Keys
-      run: find / -name "workflow"
       
     - name: Create SSH directory
       run: mkdir -p ~/.ssh
@@ -22,7 +19,7 @@ jobs:
     - name: Set up SSH key
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > ~/.ssh/workflow
-        ls
+        find / -name "workflow"
         chmod 600 ~/.ssh/workflow
         ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> ~/.ssh/known_hosts
 
