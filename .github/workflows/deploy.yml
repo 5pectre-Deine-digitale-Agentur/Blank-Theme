@@ -15,6 +15,7 @@ jobs:
 
     - name: Set up SSH key
       run: |
+        ls
         echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > /homepages/13/d829753805/htdocs/.ssh/workflow
         chmod 600 /homepages/13/d829753805/htdocs/.ssh/workflow
         ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> /homepages/13/d829753805/htdocs/.ssh/workflow
