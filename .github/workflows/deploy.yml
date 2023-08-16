@@ -12,16 +12,12 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-      
-    - name: Create SSH directory
-      run: mkdir -p ~/.ssh
 
     - name: Set up SSH key
       run: |
-        echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > ~/.ssh/workflow
-        find / -name "workflow"
-        chmod 600 ~/.ssh/workflow
-        ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> ~/.ssh/known_hosts
+        echo "${{ secrets.SSH_PRIVATE_KEY_BASE64 }}" | base64 -d > /homepages/13/d829753805/htdocs/.ssh/workflow
+        chmod 600 /homepages/13/d829753805/htdocs/.ssh/workflow
+        ssh-keyscan -t rsa ${{ secrets.SERVER_ADDRESS }} >> /homepages/13/d829753805/htdocs/.ssh/workflow
 
     - name: Deploy Theme
       run: |
